@@ -22,7 +22,7 @@ int main(void)
 	//创建套接字,该套接字用于监听
 	listenfd = socket(AF_INET,SOCK_STREAM,0);
 
-	/*在地址结构体里面装入*/
+	/*在地址结构体里面装入信息*/
 	bzero(&servaddr,sizeof(servaddr));
 	servaddr.sin_family      = AF_INET;  //说明是用IPV4通信
 	servaddr.sin_addr.s_addr = htonl(INADDR_ANY);  //自动设置监听IP,小端转大端
@@ -50,6 +50,6 @@ int main(void)
 			buf[i] = toupper(buf[i]);
 		}
 		write(connfd,buf,n); //像读取文件一样写入内容
-		close(connfd);
+		close(connfd);  //有任何一方关闭连接,另一方都会关闭连接
 	}
 }
