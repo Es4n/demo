@@ -8,5 +8,5 @@ fifo_readmany:fifo_readmany.c
 	-gcc -g fifo_readmany.c -o fifo_readmany
 
 clean:
-	-rm log log1 log2
+	-rm read_log write_log log_data
 
