@@ -31,7 +31,7 @@ int main(void)
 
 	bind(listenfd,(struct sockaddr *)&servaddr,sizeof(servaddr));  //绑定socket和sockaddr_in结构体,绑定后才能使用socket
 
-	listen(listenfd,20);  //用socket监听
+	listen(listenfd,20);  //用socket监听,第二个参数是最大的连接数
 
 	printf("Accepting connections ...\n");
 	while(1)

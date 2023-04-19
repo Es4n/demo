@@ -55,6 +55,10 @@ int main_insert(MAIN_POINT *main_head, MAIN_POINT *new_main_point)
 // 插入次节点
 int point_insert(MINOR_POINT *insert_local, MINOR_POINT *insert_point)
 {
+    /* insert_local是插入位置,指向的也是一个节点
+     * 在这个节点的后面插入新的节点
+     * */
+
     if(insert_point == NULL)
         return -1;
 
